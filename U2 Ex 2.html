@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2: "no", "none" or "none of"</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .instruction {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .controls {
+            margin-bottom: 25px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        button {
+            padding: 8px 16px;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .btn-shuffle { background-color: #8e44ad; color: white; }
+        .btn-show { background-color: #27ae60; color: white; }
+        .btn-reset { background-color: #e74c3c; color: white; }
+        
+        .question-item {
+            font-size: 1.15rem;
+            margin: 14px 0;
+            padding: 10px 12px;
+            background: #fafafa;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 6px;
+            line-height: 1.8;
+        }
+        .q-num {
+            font-weight: bold;
+            color: #2980b9;
+        }
+        /* 點擊空格樣式：預設灰色隱藏，撳落去變綠色顯示 */
+        .blank-box {
+            display: inline-block;
+            min-width: 50px;
+            height: 32px;
+            background-color: #e0e0e0;
+            border: 2px dashed #7f8c8d;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 32px;
+            cursor: pointer;
+            font-weight: bold;
+            color: transparent;
+            user-select: none;
+            transition: all 0.2s ease;
+            padding: 0 8px;
+        }
+        .blank-box.revealed {
+            background-color: #d4edda;
+            border: 2px solid #28a745;
+            color: #155724;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Exercise 2</h1>
+    <div class="instruction">Fill in the blanks with 'no', 'none' or 'none of'.</div>
+
+    <div class="controls">
+        <button class="btn-shuffle" onclick="shuffleQuestions()">🎲 隨機順序</button>
+        <button class="btn-show" onclick="revealAll()">顯示全部答案</button>
+        <button class="btn-reset" onclick="resetAll()">重設所有空格</button>
+        <span style="color: #7f8c8d; font-size: 0.9rem;">(💡 點擊任意灰格睇答案)</span>
+    </div>
+
+    <div id="question-container"></div>
+</div>
+
+<script>
+    const quizData = [
+        { q: 'What are you doing this weekend? So far I have <span class="blank-box" data-answer="no" onclick="toggleReveal(this)">no</span> plans.' },
+        { q: 'I wanted to look for information about different crops, but there was <span class="blank-box" data-answer="none" onclick="toggleReveal(this)">none</span> on the website.' },
+        { q: '&lsquo;How many brothers do you have?&rsquo; &lsquo;<span class="blank-box" data-answer="None" onclick="toggleReveal(this)">None</span>.&rsquo;' },
+        { q: 'When I entered the classroom, <span class="blank-box" data-answer="none of" onclick="toggleReveal(this)">none of</span> the students were reading.' },
+        { q: '<span class="blank-box" data-answer="No" onclick="toggleReveal(this)">No</span> animals were harmed in making this film of an animal-related topic.' },
+        { q: 'It seems that there are <span class="blank-box" data-answer="no" onclick="toggleReveal(this)">no</span> reasons for not accepting the job offer.' },
+        { q: '&lsquo;Can I have some more beer?&rsquo; &lsquo;I&rsquo;m afraid there is <span class="blank-box" data-answer="none" onclick="toggleReveal(this)">none</span> left.&rsquo;' },
+        { q: 'We have invited some friends for dinner, but <span class="blank-box" data-answer="none of" onclick="toggleReveal(this)">none of</span> them have arrived yet.' }
+    ];
+
+    window.addEventListener('DOMContentLoaded', () => {
+        renderQuiz();
+    });
+
+    function renderQuiz() {
+        const container = document.getElementById('question-container');
+        container.innerHTML = '';
+        quizData.forEach((item, index) => {
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'question-item';
+            itemDiv.innerHTML = `<span class="q-num">${index + 1}.</span> ${item.q}`;
+            container.appendChild(itemDiv);
+        });
+    }
+
+    function toggleReveal(element) {
+        if (!element.classList.contains('revealed')) {
+            element.textContent = element.getAttribute('data-answer');
+            element.classList.add('revealed');
+        } else {
+            element.classList.remove('revealed');
+            element.style.color = 'transparent';
+            setTimeout(() => { 
+                element.textContent = element.getAttribute('data-answer'); 
+            }, 200);
+        }
+        
+        if (element.classList.contains('revealed')) {
+            element.style.color = '#155724';
+        } else {
+            element.style.color = 'transparent';
+        }
+    }
+
+    function revealAll() {
+        const blanks = document.querySelectorAll('.blank-box');
+        blanks.forEach(el => {
+            el.textContent = el.getAttribute('data-answer');
+            el.classList.add('revealed');
+            el.style.color = '#155724';
+        });
+    }
+
+    function resetAll() {
+        const blanks = document.querySelectorAll('.blank-box');
+        blanks.forEach(el => {
+            el.classList.remove('revealed');
+            el.style.color = 'transparent';
+        });
+    }
+
+    function shuffleQuestions() {
+        const container = document.getElementById('question-container');
+        const rows = Array.from(container.children);
+        
+        for (let i = rows.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            container.appendChild(rows[j]);
+            rows.splice(j, 1);
+        }
+        rows.forEach(row => container.appendChild(row));
+        
+        resetAll();
+        
+        const updatedRows = container.querySelectorAll('.question-item');
+        updatedRows.forEach((row, index) => {
+            const numSpan = row.querySelector('.q-num');
+            if (numSpan) {
+                numSpan.textContent = (index + 1) + '.';
+            }
+        });
+    }
+</script>
+</body>
+</html>

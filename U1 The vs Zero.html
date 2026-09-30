@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)file:///C:/Users/ry251/Downloads/gemini-code-1788513449738.html -->
+<html lang="zh-HK"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Definite Article "The" &amp; Zero Article Challenge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .instructions {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+        .controls {
+            margin-bottom: 25px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        button {
+            padding: 8px 16px;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .btn-shuffle {
+            background-color: #8e44ad;
+            color: white;
+        }
+        .btn-shuffle:hover {
+            background-color: #732d91;
+        }
+        .btn-show {
+            background-color: #27ae60;
+            color: white;
+        }
+        .btn-show:hover {
+            background-color: #219653;
+        }
+        .btn-reset {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .btn-reset:hover {
+            background-color: #c0392b;
+        }
+        .question-item {
+            font-size: 1.15rem;
+            margin: 12px 0;
+            padding: 10px;
+            background: #fafafa;
+            border-left: 5px solid #3498db;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 6px;
+            line-height: 1.8;
+        }
+        /* The 格式 */
+        .blank-the {
+            display: inline-block;
+            min-width: 45px;
+            height: 32px;
+            background-color: #e0e0e0;
+            border: 2px dashed #7f8c8d;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 32px;
+            cursor: pointer;
+            font-weight: bold;
+            color: transparent;
+            user-select: none;
+            transition: all 0.2s ease;
+            padding: 0 8px;
+        }
+        .blank-the.revealed {
+            background-color: #d4edda;
+            border: 2px solid #28a745;
+            color: #155724;
+        }
+        /* Zero article (不需要加) 格式 */
+        .blank-zero {
+            display: inline-block;
+            min-width: 45px;
+            height: 32px;
+            background-color: #e0e0e0;
+            border: 2px dashed #7f8c8d;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 32px;
+            cursor: pointer;
+            font-weight: bold;
+            color: transparent;
+            user-select: none;
+            transition: all 0.2s ease;
+            padding: 0 8px;
+        }
+        .blank-zero.revealed {
+            background-color: #fff3cd;
+            border: 2px solid #ffc107;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Definite Article "The" vs. Zero Article Challenge 🎯</h1>
+    <div class="instructions">💡 點擊空格：綠色代表要填 <b>the</b> ；黃色代表 <b>不需要填 (Ø)</b></div>
+
+    <div class="controls">
+        <button class="btn-shuffle" onclick="shuffleQuestions()">🎲 Shuffle Questions</button>
+        <button class="btn-show" onclick="revealAll()">Show All Answers</button>
+        <button class="btn-reset" onclick="resetAll()">Reset Choices</button>
+    </div>
+
+    <div id="question-container">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    <div class="question-item">
+            <span><span class="q-num">1</span>. We visited</span> <span class="blank-the" onclick="revealThe(this)">the</span> <span>Science Museum and</span> <span class="blank-the" onclick="revealThe(this)">the</span> <span>Peninsula Hotel.</span>
+        </div><div class="question-item">
+            <span><span class="q-num">2</span>. Hong Kong is in Asia. ➔ Hong Kong is in</span> <span class="blank-zero" onclick="revealZero(this)">Ø</span> <span>Asia.</span>
+        </div><div class="question-item">
+            <span><span class="q-num">3</span>. She can play</span> <span class="blank-the" onclick="revealThe(this)">the</span> <span>piano and</span> <span class="blank-the" onclick="revealThe(this)">the</span> <span>violin.</span>
+        </div><div class="question-item">
+            <span><span class="q-num">4</span>. Have you ever been to</span> <span class="blank-zero" onclick="revealZero(this)">Ø</span> <span>Guangdong Province in</span> <span class="blank-zero" onclick="revealZero(this)">Ø</span> <span>China?</span>
+        </div><div class="question-item">
+            <span><span class="q-num">5</span>. Climbers explored</span> <span class="blank-the" onclick="revealThe(this)">the</span> <span>Himalayas and</span> <span class="blank-the" onclick="revealThe(this)">the</span> <span>North Pole.</span>
+        </div><div class="question-item">
+            <span><span class="q-num">6</span>.</span> <span class="blank-the" onclick="revealThe(this)">The</span> <span>earth moves around</span> <span class="blank-the" onclick="revealThe(this)">the</span> <span>sun in</span> <span class="blank-the" onclick="revealThe(this)">the</span> <span>sky.</span>
+        </div><div class="question-item">
+            <span><span class="q-num">7</span>. She is</span> <span class="blank-the" onclick="revealThe(this)">the</span> <span>most beautiful girl in</span> <span class="blank-the" onclick="revealThe(this)">the</span> <span>class.</span>
+        </div><div class="question-item">
+            <span><span class="q-num">8</span>. We usually study in</span> <span class="blank-the" onclick="revealThe(this)">the</span> <span>morning or in</span> <span class="blank-the" onclick="revealThe(this)">the</span> <span>afternoon.</span>
+        </div><div class="question-item">
+            <span><span class="q-num">9</span>. Sailors crossed</span> <span class="blank-the" onclick="revealThe(this)">the</span> <span>Pacific Ocean and</span> <span class="blank-the" onclick="revealThe(this)">the</span> <span>Atlantic Ocean.</span>
+        </div><div class="question-item">
+            <span><span class="q-num">10</span>. My sister usually has eggs and toast for</span> <span class="blank-zero" onclick="revealZero(this)">Ø</span> <span>breakfast.</span>
+        </div><div class="question-item">
+            <span><span class="q-num">11</span>. My sister goes to school on</span> <span class="blank-zero" onclick="revealZero(this)">Ø</span> <span>foot.</span>
+        </div><div class="question-item">
+            <span><span class="q-num">12</span>. My friend's birthday is in</span> <span class="blank-zero" onclick="revealZero(this)">Ø</span> <span>June.</span>
+        </div><div class="question-item">
+            <span><span class="q-num">13</span>. Steve listens to</span> <span class="blank-the" onclick="revealThe(this)">the</span> <span>radio every morning.</span>
+        </div><div class="question-item">
+            <span><span class="q-num">14</span>. The injured passengers were sent to</span> <span class="blank-zero" onclick="revealZero(this)">Ø</span> <span>hospital.</span>
+        </div><div class="question-item">
+            <span><span class="q-num">15</span>. The murderer is in</span> <span class="blank-zero" onclick="revealZero(this)">Ø</span> <span>prison now.</span>
+        </div><div class="question-item">
+            <span><span class="q-num">16</span>. We have a test on</span> <span class="blank-zero" onclick="revealZero(this)">Ø</span> <span>Wednesday.</span>
+        </div><div class="question-item">
+            <span><span class="q-num">17</span>. Most students go to school by</span> <span class="blank-zero" onclick="revealZero(this)">Ø</span> <span>bus.</span>
+        </div><div class="question-item">
+            <span><span class="q-num">18</span>. Have you had</span> <span class="blank-zero" onclick="revealZero(this)">Ø</span> <span>lunch yet?</span>
+        </div></div>
+</div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        shuffleQuestions();
+    });
+
+    function shuffleQuestions() {
+        const container = document.getElementById('question-container');
+        const rows = Array.from(container.children);
+        
+        // Fisher-Yates shuffle
+        for (let i = rows.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            container.appendChild(rows[j]);
+            rows.splice(j, 1);
+        }
+        rows.forEach(row => container.appendChild(row));
+        
+        resetAll();
+        updateNumbers();
+    }
+
+    function updateNumbers() {
+        const rows = document.querySelectorAll('#question-container .question-item');
+        rows.forEach((row, index) => {
+            const numSpan = row.querySelector('.q-num');
+            if (numSpan) {
+                numSpan.textContent = index + 1;
+            }
+        });
+    }
+
+    function revealThe(element) {
+        element.classList.toggle('revealed');
+    }
+
+    function revealZero(element) {
+        element.classList.toggle('revealed');
+        if (element.classList.contains('revealed')) {
+            element.innerText = 'Ø';
+        } else {
+            element.innerText = 'Ø';
+        }
+    }
+
+    function revealAll() {
+        const blanks = document.querySelectorAll('.blank-the, .blank-zero');
+        blanks.forEach(blank => {
+            blank.classList.add('revealed');
+            if (blank.classList.contains('blank-zero')) {
+                blank.innerText = 'Ø';
+            }
+        });
+    }
+
+    function resetAll() {
+        const blanks = document.querySelectorAll('.blank-the, .blank-zero');
+        blanks.forEach(blank => {
+            blank.classList.remove('revealed');
+            if (blank.classList.contains('blank-zero')) {
+                blank.innerText = 'Ø';
+            }
+        });
+    }
+</script>
+
+
+</body></html>

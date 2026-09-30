@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)file:///C:/Users/ry251/Downloads/gemini-code-1788514438789.html -->
+<html lang="zh-HK"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 4: Quantifiers Multiple Choice Quiz (Shuffled)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .instruction {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .controls {
+            margin-bottom: 25px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        button {
+            padding: 8px 16px;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .btn-shuffle {
+            background-color: #8e44ad;
+            color: white;
+        }
+        .btn-shuffle:hover {
+            background-color: #732d91;
+        }
+        .btn-show {
+            background-color: #27ae60;
+            color: white;
+        }
+        .btn-show:hover {
+            background-color: #219653;
+        }
+        .btn-reset {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .btn-reset:hover {
+            background-color: #c0392b;
+        }
+        .question-card {
+            background: #fafafa;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+        }
+        .question-text {
+            font-size: 1.12rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #2c3e50;
+            line-height: 1.5;
+        }
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        .option {
+            background: white;
+            border: 2px solid #bdc3c7;
+            padding: 10px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.05rem;
+            transition: all 0.2s;
+            user-select: none;
+        }
+        .option:hover {
+            border-color: #3498db;
+            background: #ebf5fb;
+        }
+        .option.correct-reveal {
+            background-color: #d4edda !important;
+            border-color: #28a745 !important;
+            color: #155724;
+            font-weight: bold;
+        }
+        .option.selected-wrong {
+            background-color: #f8d7da;
+            border-color: #dc3545;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Exercise 4</h1>
+    <div class="instruction">Circle the correct answers to complete the sentences.</div>
+
+    <div class="controls">
+        <button class="btn-shuffle" onclick="shuffleAll()">🎲 Shuffle Questions &amp; Options</button>
+        <button class="btn-show" onclick="revealAll()">Show All Answers</button>
+        <button class="btn-reset" onclick="resetAll()">Reset Choices</button>
+        <span style="align-self: center; color: #7f8c8d; font-size: 0.9rem;">💡 (Click any option to check your answer)</span>
+    </div>
+
+    <div id="question-container">
+        <!-- Q1 -->
+        
+
+        <!-- Q2 -->
+        
+
+        <!-- Q3 -->
+        
+
+        <!-- Q4 -->
+        
+
+        <!-- Q5 -->
+        
+
+        <!-- Q6 -->
+        
+
+        <!-- Q7 -->
+        
+
+        <!-- Q8 -->
+        
+
+        <!-- Q9 -->
+        
+
+        <!-- Q10 -->
+        
+
+        <!-- Q11 -->
+        
+
+        <!-- Q12 -->
+        
+
+        <!-- Q13 -->
+        
+
+        <!-- Q14 -->
+        
+
+        <!-- Q15 -->
+        
+    <div class="question-card" data-answer="every">
+            <div class="question-text"><span class="q-num">1</span>. The athletes in the Olympics have tried their best in <span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span> race.</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">every</div><div class="option" onclick="checkAnswer(this)">each of</div><div class="option" onclick="checkAnswer(this)">all</div><div class="option" onclick="checkAnswer(this)">all of</div></div>
+        </div><div class="question-card" data-answer="Every">
+            <div class="question-text"><span class="q-num">2</span>. I participated in the marathon yesterday. <span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span> muscle in my body aches now.</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">All of</div><div class="option" onclick="checkAnswer(this)">All</div><div class="option" onclick="checkAnswer(this)">Every</div><div class="option" onclick="checkAnswer(this)">Each of</div></div>
+        </div><div class="question-card" data-answer="all">
+            <div class="question-text"><span class="q-num">3</span>. Cyrus has spent <span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span> his time playing video games all day long.</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">each</div><div class="option" onclick="checkAnswer(this)">every one of</div><div class="option" onclick="checkAnswer(this)">every</div><div class="option" onclick="checkAnswer(this)">all</div></div>
+        </div><div class="question-card" data-answer="Every">
+            <div class="question-text"><span class="q-num">4</span>. <span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span> student will receive an attendance certificate at the end of the course.</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">Every</div><div class="option" onclick="checkAnswer(this)">All</div><div class="option" onclick="checkAnswer(this)">All of</div><div class="option" onclick="checkAnswer(this)">Every one of</div></div>
+        </div><div class="question-card" data-answer="all">
+            <div class="question-text"><span class="q-num">5</span>. Please make sure that <span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span> baggage does not exceed the weight restriction.</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">every one of</div><div class="option" onclick="checkAnswer(this)">all of</div><div class="option" onclick="checkAnswer(this)">all</div><div class="option" onclick="checkAnswer(this)">every</div></div>
+        </div><div class="question-card" data-answer="Every one of">
+            <div class="question-text"><span class="q-num">6</span>. The event was a huge success. <span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span> the participants enjoyed themselves very much.</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">Every one of</div><div class="option" onclick="checkAnswer(this)">Every of</div><div class="option" onclick="checkAnswer(this)">Each</div><div class="option" onclick="checkAnswer(this)">Every</div></div>
+        </div><div class="question-card" data-answer="Each">
+            <div class="question-text"><span class="q-num">7</span>. <span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span> sleeve of his shirt has three buttons.</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">Each of</div><div class="option" onclick="checkAnswer(this)">All</div><div class="option" onclick="checkAnswer(this)">Each</div><div class="option" onclick="checkAnswer(this)">All of</div></div>
+        </div><div class="question-card" data-answer="all">
+            <div class="question-text"><span class="q-num">8</span>. Interestingly, not <span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span> students enjoy learning through games.</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">all of</div><div class="option" onclick="checkAnswer(this)">every</div><div class="option" onclick="checkAnswer(this)">each</div><div class="option" onclick="checkAnswer(this)">all</div></div>
+        </div><div class="question-card" data-answer="every">
+            <div class="question-text"><span class="q-num">9</span>. The charity gives free lunchboxes to <span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span> beggar in this street.</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">all of</div><div class="option" onclick="checkAnswer(this)">all</div><div class="option" onclick="checkAnswer(this)">every</div><div class="option" onclick="checkAnswer(this)">every one of</div></div>
+        </div><div class="question-card" data-answer="every">
+            <div class="question-text"><span class="q-num">10</span>. The students grasped <span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span> minute to write down the answers during the exam.</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">all of</div><div class="option" onclick="checkAnswer(this)">all</div><div class="option" onclick="checkAnswer(this)">every one of</div><div class="option" onclick="checkAnswer(this)">every</div></div>
+        </div><div class="question-card" data-answer="all">
+            <div class="question-text"><span class="q-num">11</span>. He gambled <span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span> his money away last night.</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">all</div><div class="option" onclick="checkAnswer(this)">every</div><div class="option" onclick="checkAnswer(this)">each</div><div class="option" onclick="checkAnswer(this)">each of</div></div>
+        </div><div class="question-card" data-answer="Every">
+            <div class="question-text"><span class="q-num">12</span>. <span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span> student has an access card to the research center.</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">All of</div><div class="option" onclick="checkAnswer(this)">Each of</div><div class="option" onclick="checkAnswer(this)">Every</div><div class="option" onclick="checkAnswer(this)">Every one of</div></div>
+        </div><div class="question-card" data-answer="all">
+            <div class="question-text"><span class="q-num">13</span>. Winnie has thrown away <span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span> useless documents.</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">every</div><div class="option" onclick="checkAnswer(this)">all</div><div class="option" onclick="checkAnswer(this)">each</div><div class="option" onclick="checkAnswer(this)">every one of</div></div>
+        </div><div class="question-card" data-answer="all of">
+            <div class="question-text"><span class="q-num">14</span>. I do not know <span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span> them yet. Please introduce them to me.</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">every</div><div class="option" onclick="checkAnswer(this)">all of</div><div class="option" onclick="checkAnswer(this)">every of</div><div class="option" onclick="checkAnswer(this)">each</div></div>
+        </div><div class="question-card" data-answer="all of">
+            <div class="question-text"><span class="q-num">15</span>. If you feel nervous when you give your presentation, just remember that <span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span> us will support you.</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">each</div><div class="option" onclick="checkAnswer(this)">all of</div><div class="option" onclick="checkAnswer(this)">all</div><div class="option" onclick="checkAnswer(this)">every</div></div>
+        </div></div>
+
+</div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        shuffleAll();
+    });
+
+    function shuffleAll() {
+        const container = document.getElementById('question-container');
+        const cards = Array.from(container.children);
+        
+        // 1. Shuffle options inside each question card
+        cards.forEach(card => {
+            const grid = card.querySelector('.options-grid');
+            const options = Array.from(grid.children);
+            for (let i = options.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                grid.appendChild(options[j]);
+                options.splice(j, 1);
+            }
+            options.forEach(opt => grid.appendChild(opt));
+        });
+
+        // 2. Shuffle question cards order
+        for (let i = cards.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            container.appendChild(cards[j]);
+            cards.splice(j, 1);
+        }
+        cards.forEach(card => container.appendChild(card));
+        
+        resetAll();
+        updateNumbers();
+    }
+
+    function updateNumbers() {
+        const cards = document.querySelectorAll('#question-container .question-card');
+        cards.forEach((card, index) => {
+            card.querySelector('.q-num').textContent = index + 1;
+        });
+    }
+
+    function checkAnswer(selectedOption) {
+        const card = selectedOption.closest('.question-card');
+        const correctAnswer = card.getAttribute('data-answer').trim().toLowerCase();
+        const options = card.querySelectorAll('.option');
+
+        // Reset options in this card
+        options.forEach(opt => {
+            opt.classList.remove('correct-reveal', 'selected-wrong');
+        });
+
+        const selectedText = selectedOption.textContent.trim().toLowerCase();
+
+        if (selectedText === correctAnswer) {
+            selectedOption.classList.add('correct-reveal');
+        } else {
+            selectedOption.classList.add('selected-wrong');
+            // Highlight the correct one
+            options.forEach(opt => {
+                if (opt.textContent.trim().toLowerCase() === correctAnswer) {
+                    opt.classList.add('correct-reveal');
+                }
+            });
+        }
+    }
+
+    function revealAll() {
+        const cards = document.querySelectorAll('.question-card');
+        cards.forEach(card => {
+            const correctAnswer = card.getAttribute('data-answer').trim().toLowerCase();
+            const options = card.querySelectorAll('.option');
+            options.forEach(opt => {
+                opt.classList.remove('selected-wrong');
+                if (opt.textContent.trim().toLowerCase() === correctAnswer) {
+                    opt.classList.add('correct-reveal');
+                }
+            });
+        });
+    }
+
+    function resetAll() {
+        const options = document.querySelectorAll('.option');
+        options.forEach(opt => {
+            opt.classList.remove('correct-reveal', 'selected-wrong');
+        });
+    }
+</script>
+
+
+</body></html>

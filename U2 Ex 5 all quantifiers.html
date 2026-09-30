@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)file:///C:/Users/ry251/Downloads/gemini-code-1788514538336.html -->
+<html lang="zh-HK"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5: Quantifiers Multiple Choice Quiz (Shuffled)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .instruction {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .controls {
+            margin-bottom: 25px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        button {
+            padding: 8px 16px;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .btn-shuffle {
+            background-color: #8e44ad;
+            color: white;
+        }
+        .btn-shuffle:hover {
+            background-color: #732d91;
+        }
+        .btn-show {
+            background-color: #27ae60;
+            color: white;
+        }
+        .btn-show:hover {
+            background-color: #219653;
+        }
+        .btn-reset {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .btn-reset:hover {
+            background-color: #c0392b;
+        }
+        .question-card {
+            background: #fafafa;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+        }
+        .question-text {
+            font-size: 1.12rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #2c3e50;
+            line-height: 1.5;
+        }
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        .option {
+            background: white;
+            border: 2px solid #bdc3c7;
+            padding: 10px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.05rem;
+            transition: all 0.2s;
+            user-select: none;
+        }
+        .option:hover {
+            border-color: #3498db;
+            background: #ebf5fb;
+        }
+        .option.correct-reveal {
+            background-color: #d4edda !important;
+            border-color: #28a745 !important;
+            color: #155724;
+            font-weight: bold;
+        }
+        .option.selected-wrong {
+            background-color: #f8d7da;
+            border-color: #dc3545;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Exercise 5</h1>
+    <div class="instruction">Circle the correct answers to complete the sentences.</div>
+
+    <div class="controls">
+        <button class="btn-shuffle" onclick="shuffleAll()">🎲 Shuffle Questions &amp; Options</button>
+        <button class="btn-show" onclick="revealAll()">Show All Answers</button>
+        <button class="btn-reset" onclick="resetAll()">Reset Choices</button>
+        <span style="align-self: center; color: #7f8c8d; font-size: 0.9rem;">💡 (Click any option to check your answer)</span>
+    </div>
+
+    <div id="question-container">
+        <!-- Q1 -->
+        
+
+        <!-- Q2 -->
+        
+
+        <!-- Q3 -->
+        
+
+        <!-- Q4 -->
+        
+
+        <!-- Q5 -->
+        
+
+        <!-- Q6 -->
+        
+
+        <!-- Q7 -->
+        
+
+        <!-- Q8 -->
+        
+
+        <!-- Q9 -->
+        
+
+        <!-- Q10 -->
+        
+
+        <!-- Q11 -->
+        
+
+        <!-- Q12 -->
+        
+    <div class="question-card" data-answer="either of">
+            <div class="question-text"><span class="q-num">1</span>. There are two plans for you to choose from. You can join <span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span> them.</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">either of</div><div class="option" onclick="checkAnswer(this)">both</div><div class="option" onclick="checkAnswer(this)">either</div><div class="option" onclick="checkAnswer(this)">both of</div></div>
+        </div><div class="question-card" data-answer="Both">
+            <div class="question-text"><span class="q-num">2</span>. <span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span> films look interesting. Which one do you want to watch?</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">Neither</div><div class="option" onclick="checkAnswer(this)">Either</div><div class="option" onclick="checkAnswer(this)">Either of</div><div class="option" onclick="checkAnswer(this)">Both</div></div>
+        </div><div class="question-card" data-answer="Neither">
+            <div class="question-text"><span class="q-num">3</span>. Miss Cheung and Miss Choi are single. <span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span> is married.</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">Neither of</div><div class="option" onclick="checkAnswer(this)">Neither</div><div class="option" onclick="checkAnswer(this)">Either</div><div class="option" onclick="checkAnswer(this)">Either of</div></div>
+        </div><div class="question-card" data-answer="either">
+            <div class="question-text"><span class="q-num">4</span>. We only have limited budget. We can only buy <span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span> one of them.</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">neither</div><div class="option" onclick="checkAnswer(this)">either</div><div class="option" onclick="checkAnswer(this)">both</div><div class="option" onclick="checkAnswer(this)">both of</div></div>
+        </div><div class="question-card" data-answer="neither of">
+            <div class="question-text"><span class="q-num">5</span>. The committee has produced two reports, but <span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span> them contains any useful information.</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">both of</div><div class="option" onclick="checkAnswer(this)">both</div><div class="option" onclick="checkAnswer(this)">either of</div><div class="option" onclick="checkAnswer(this)">neither of</div></div>
+        </div><div class="question-card" data-answer="Both of">
+            <div class="question-text"><span class="q-num">6</span>. Thomas doesn't like history or Literature. <span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span> them are boring to him.</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">Both</div><div class="option" onclick="checkAnswer(this)">Either of</div><div class="option" onclick="checkAnswer(this)">Neither of</div><div class="option" onclick="checkAnswer(this)">Both of</div></div>
+        </div><div class="question-card" data-answer="Both of">
+            <div class="question-text"><span class="q-num">7</span>. <span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span> my parents are out of town for business trip this weekend.</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">Each of</div><div class="option" onclick="checkAnswer(this)">Each</div><div class="option" onclick="checkAnswer(this)">Both of</div><div class="option" onclick="checkAnswer(this)">Both</div></div>
+        </div><div class="question-card" data-answer="Either of">
+            <div class="question-text"><span class="q-num">8</span>. You can keep one of the books. <span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span> them – whichever you like.</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">Both</div><div class="option" onclick="checkAnswer(this)">Either</div><div class="option" onclick="checkAnswer(this)">Both of</div><div class="option" onclick="checkAnswer(this)">Either of</div></div>
+        </div><div class="question-card" data-answer="both">
+            <div class="question-text"><span class="q-num">9</span>. Alan is an orphan. He lost <span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span> parents when he was a child.</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">neither</div><div class="option" onclick="checkAnswer(this)">either of</div><div class="option" onclick="checkAnswer(this)">both of</div><div class="option" onclick="checkAnswer(this)">both</div></div>
+        </div><div class="question-card" data-answer="Either">
+            <div class="question-text"><span class="q-num">10</span>. Feel free to come on Saturday or Sunday. <span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span> day is fine with me.</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">Neither</div><div class="option" onclick="checkAnswer(this)">Either of</div><div class="option" onclick="checkAnswer(this)">Either</div><div class="option" onclick="checkAnswer(this)">Neither of</div></div>
+        </div><div class="question-card" data-answer="Neither">
+            <div class="question-text"><span class="q-num">11</span>. 'Which one do you prefer?' &nbsp;&nbsp;&nbsp;&nbsp; '<span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span>. I think they're both expensive.'</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">Neither of</div><div class="option" onclick="checkAnswer(this)">Neither</div><div class="option" onclick="checkAnswer(this)">Either</div><div class="option" onclick="checkAnswer(this)">Either of</div></div>
+        </div><div class="question-card" data-answer="Neither">
+            <div class="question-text"><span class="q-num">12</span>. 'Would you like coffee or tea?' &nbsp;&nbsp;&nbsp;&nbsp; '<span style="border-bottom: 2px dashed #7f8c8d; display:inline-block; width:90px;"></span>. I'm not thirsty.'</div>
+            <div class="options-grid">
+                
+                
+                
+                
+            <div class="option" onclick="checkAnswer(this)">Either</div><div class="option" onclick="checkAnswer(this)">Either of</div><div class="option" onclick="checkAnswer(this)">Neither</div><div class="option" onclick="checkAnswer(this)">Both</div></div>
+        </div></div>
+
+</div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        shuffleAll();
+    });
+
+    function shuffleAll() {
+        const container = document.getElementById('question-container');
+        const cards = Array.from(container.children);
+        
+        // 1. Shuffle options inside each question card
+        cards.forEach(card => {
+            const grid = card.querySelector('.options-grid');
+            const options = Array.from(grid.children);
+            for (let i = options.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                grid.appendChild(options[j]);
+                options.splice(j, 1);
+            }
+            options.forEach(opt => grid.appendChild(opt));
+        });
+
+        // 2. Shuffle question cards order
+        for (let i = cards.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            container.appendChild(cards[j]);
+            cards.splice(j, 1);
+        }
+        cards.forEach(card => container.appendChild(card));
+        
+        resetAll();
+        updateNumbers();
+    }
+
+    function updateNumbers() {
+        const cards = document.querySelectorAll('#question-container .question-card');
+        cards.forEach((card, index) => {
+            card.querySelector('.q-num').textContent = index + 1;
+        });
+    }
+
+    function checkAnswer(selectedOption) {
+        const card = selectedOption.closest('.question-card');
+        const correctAnswer = card.getAttribute('data-answer').trim().toLowerCase();
+        const options = card.querySelectorAll('.option');
+
+        // Reset options in this card
+        options.forEach(opt => {
+            opt.classList.remove('correct-reveal', 'selected-wrong');
+        });
+
+        const selectedText = selectedOption.textContent.trim().toLowerCase();
+
+        if (selectedText === correctAnswer) {
+            selectedOption.classList.add('correct-reveal');
+        } else {
+            selectedOption.classList.add('selected-wrong');
+            // Highlight the correct one
+            options.forEach(opt => {
+                if (opt.textContent.trim().toLowerCase() === correctAnswer) {
+                    opt.classList.add('correct-reveal');
+                }
+            });
+        }
+    }
+
+    function revealAll() {
+        const cards = document.querySelectorAll('.question-card');
+        cards.forEach(card => {
+            const correctAnswer = card.getAttribute('data-answer').trim().toLowerCase();
+            const options = card.querySelectorAll('.option');
+            options.forEach(opt => {
+                opt.classList.remove('selected-wrong');
+                if (opt.textContent.trim().toLowerCase() === correctAnswer) {
+                    opt.classList.add('correct-reveal');
+                }
+            });
+        });
+    }
+
+    function resetAll() {
+        const options = document.querySelectorAll('.option');
+        options.forEach(opt => {
+            opt.classList.remove('correct-reveal', 'selected-wrong');
+        });
+    }
+</script>
+
+
+</body></html>

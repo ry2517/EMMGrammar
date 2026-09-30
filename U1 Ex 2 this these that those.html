@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)file:///C:/Users/ry251/Downloads/gemini-code-1788513103080.html -->
+<html lang="zh-HK"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2: Demonstrative Pronouns Interactive Quiz (Shuffle Feature)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .instruction {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .controls {
+            margin-bottom: 25px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        button {
+            padding: 8px 16px;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .btn-show {
+            background-color: #27ae60;
+            color: white;
+        }
+        .btn-show:hover {
+            background-color: #219653;
+        }
+        .btn-shuffle {
+            background-color: #8e44ad;
+            color: white;
+        }
+        .btn-shuffle:hover {
+            background-color: #732d91;
+        }
+        .btn-reset {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .btn-reset:hover {
+            background-color: #c0392b;
+        }
+        table.quiz-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table.quiz-table th, table.quiz-table td {
+            border: 1px solid #bdc3c7;
+            padding: 12px 15px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        table.quiz-table th {
+            background-color: #34495e;
+            color: white;
+        }
+        .option {
+            display: inline-block;
+            margin-right: 15px;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 4px;
+            user-select: none;
+            transition: background 0.2s;
+        }
+        .option:hover {
+            background-color: #ecf0f1;
+        }
+        .option input {
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        .option.correct-choice.revealed {
+            background-color: #d4edda;
+            color: #155724;
+            font-weight: bold;
+            border: 1px solid #28a745;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Exercise 2 (Interactive Quiz + Shuffle)</h1>
+    <div class="instruction">Complete the following sentences by choosing the correct options. (1. Singular or plural? 2. Close or far?)</div>
+
+    <div class="controls">
+        <button class="btn-shuffle" onclick="shuffleQuestions()">🎲 Shuffle Questions</button>
+        <button class="btn-show" onclick="revealAll()">Show All Answers</button>
+        <button class="btn-reset" onclick="resetAll()">Reset Choices</button>
+        <span style="align-self: center; color: #7f8c8d; font-size: 0.9rem;">💡 (Click shuffle to mix questions instantly)</span>
+    </div>
+
+    <table class="quiz-table">
+        <thead>
+            <tr>
+                <th>Sentence</th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody id="quiz-body">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        <tr data-answer="B">
+                <td><span class="q-num">1</span>. ________ days, there is a computer in almost every household.</td>
+                <td>
+                    <span class="option" onclick="checkAnswer(this, &#39;A&#39;)"><input type="radio" name="q_5">A. That</span>
+                    <span class="option correct-choice" onclick="checkAnswer(this, &#39;B&#39;)"><input type="radio" name="q_5">B. These</span>
+                    <span class="option" onclick="checkAnswer(this, &#39;C&#39;)"><input type="radio" name="q_5">C. Those</span>
+                </td>
+            </tr><tr data-answer="C">
+                <td><span class="q-num">2</span>. <strong style="color: #e67e22;">[BONUS]</strong> I love eating ________ delicious snacks right here.</td>
+                <td>
+                    <span class="option" onclick="checkAnswer(this, &#39;A&#39;)"><input type="radio" name="q_b3">A. that</span>
+                    <span class="option" onclick="checkAnswer(this, &#39;B&#39;)"><input type="radio" name="q_b3">B. those</span>
+                    <span class="option correct-choice" onclick="checkAnswer(this, &#39;C&#39;)"><input type="radio" name="q_b3">C. these</span>
+                </td>
+            </tr><tr data-answer="B">
+                <td><span class="q-num">3</span>. ________ people are hurt. Can you help them?</td>
+                <td>
+                    <span class="option" onclick="checkAnswer(this, &#39;A&#39;)"><input type="radio" name="q_6">A. This</span>
+                    <span class="option correct-choice" onclick="checkAnswer(this, &#39;B&#39;)"><input type="radio" name="q_6">B. Those</span>
+                    <span class="option" onclick="checkAnswer(this, &#39;C&#39;)"><input type="radio" name="q_6">C. That</span>
+                </td>
+            </tr><tr data-answer="A">
+                <td><span class="q-num">4</span>. <strong style="color: #e67e22;">[BONUS]</strong> Look at ________ birds flying high up in the sky!</td>
+                <td>
+                    <span class="option correct-choice" onclick="checkAnswer(this, &#39;A&#39;)"><input type="radio" name="q_b1">A. those</span>
+                    <span class="option" onclick="checkAnswer(this, &#39;B&#39;)"><input type="radio" name="q_b1">B. this</span>
+                    <span class="option" onclick="checkAnswer(this, &#39;C&#39;)"><input type="radio" name="q_b1">C. that</span>
+                </td>
+            </tr><tr data-answer="C">
+                <td><span class="q-num">5</span>. Are we going to ________ building? It's far away!</td>
+                <td>
+                    <span class="option" onclick="checkAnswer(this, &#39;A&#39;)"><input type="radio" name="q_7">A. those</span>
+                    <span class="option" onclick="checkAnswer(this, &#39;B&#39;)"><input type="radio" name="q_7">B. these</span>
+                    <span class="option correct-choice" onclick="checkAnswer(this, &#39;C&#39;)"><input type="radio" name="q_7">C. that</span>
+                </td>
+            </tr><tr data-answer="C">
+                <td><span class="q-num">6</span>. '________ is my classmate, Alex.' 'Nice to meet you, Alex.'</td>
+                <td>
+                    <span class="option" onclick="checkAnswer(this, &#39;A&#39;)"><input type="radio" name="q_3">A. That</span>
+                    <span class="option" onclick="checkAnswer(this, &#39;B&#39;)"><input type="radio" name="q_3">B. These</span>
+                    <span class="option correct-choice" onclick="checkAnswer(this, &#39;C&#39;)"><input type="radio" name="q_3">C. This</span>
+                </td>
+            </tr><tr data-answer="A">
+                <td><span class="q-num">7</span>. Put ________ dirty socks in the washing machine.</td>
+                <td>
+                    <span class="option correct-choice" onclick="checkAnswer(this, &#39;A&#39;)"><input type="radio" name="q_4">A. those</span>
+                    <span class="option" onclick="checkAnswer(this, &#39;B&#39;)"><input type="radio" name="q_4">B. this</span>
+                    <span class="option" onclick="checkAnswer(this, &#39;C&#39;)"><input type="radio" name="q_4">C. that</span>
+                </td>
+            </tr><tr data-answer="C">
+                <td><span class="q-num">8</span>. <strong style="color: #e67e22;">[BONUS]</strong> Hello, is ________ Mary speaking? (on the phone)</td>
+                <td>
+                    <span class="option" onclick="checkAnswer(this, &#39;A&#39;)"><input type="radio" name="q_b5">A. those</span>
+                    <span class="option" onclick="checkAnswer(this, &#39;B&#39;)"><input type="radio" name="q_b5">B. that</span>
+                    <span class="option correct-choice" onclick="checkAnswer(this, &#39;C&#39;)"><input type="radio" name="q_b5">C. this</span>
+                </td>
+            </tr><tr data-answer="B">
+                <td><span class="q-num">9</span>. ________ chair is very comfortable.</td>
+                <td>
+                    <span class="option" onclick="checkAnswer(this, &#39;A&#39;)"><input type="radio" name="q_1">A. Those</span>
+                    <span class="option correct-choice" onclick="checkAnswer(this, &#39;B&#39;)"><input type="radio" name="q_1">B. This</span>
+                    <span class="option" onclick="checkAnswer(this, &#39;C&#39;)"><input type="radio" name="q_1">C. These</span>
+                </td>
+            </tr><tr data-answer="B">
+                <td><span class="q-num">10</span>. <strong style="color: #e67e22;">[BONUS]</strong> Can you hand me ________ pen right here in my hand?</td>
+                <td>
+                    <span class="option" onclick="checkAnswer(this, &#39;A&#39;)"><input type="radio" name="q_b2">A. that</span>
+                    <span class="option correct-choice" onclick="checkAnswer(this, &#39;B&#39;)"><input type="radio" name="q_b2">B. this</span>
+                    <span class="option" onclick="checkAnswer(this, &#39;C&#39;)"><input type="radio" name="q_b2">C. those</span>
+                </td>
+            </tr><tr data-answer="B">
+                <td><span class="q-num">11</span>. Is ________ man over there your teacher?</td>
+                <td>
+                    <span class="option" onclick="checkAnswer(this, &#39;A&#39;)"><input type="radio" name="q_2">A. this</span>
+                    <span class="option correct-choice" onclick="checkAnswer(this, &#39;B&#39;)"><input type="radio" name="q_2">B. that</span>
+                    <span class="option" onclick="checkAnswer(this, &#39;C&#39;)"><input type="radio" name="q_2">C. those</span>
+                </td>
+            </tr><tr data-answer="A">
+                <td><span class="q-num">12</span>. <strong style="color: #e67e22;">[BONUS]</strong> Who left ________ umbrella on the table over there?</td>
+                <td>
+                    <span class="option correct-choice" onclick="checkAnswer(this, &#39;A&#39;)"><input type="radio" name="q_b4">A. that</span>
+                    <span class="option" onclick="checkAnswer(this, &#39;B&#39;)"><input type="radio" name="q_b4">B. these</span>
+                    <span class="option" onclick="checkAnswer(this, &#39;C&#39;)"><input type="radio" name="q_b4">C. this</span>
+                </td>
+            </tr></tbody>
+    </table>
+
+</div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        shuffleQuestions();
+    });
+
+    function shuffleQuestions() {
+        const tbody = document.getElementById('quiz-body');
+        const rows = Array.from(tbody.children);
+        
+        // Fisher-Yates shuffle algorithm
+        for (let i = rows.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            tbody.appendChild(rows[j]);
+            rows.splice(j, 1);
+        }
+        rows.forEach(row => tbody.appendChild(row));
+        
+        // Reset selections & update numbers after shuffling
+        resetAll();
+        updateNumbers();
+    }
+
+    function updateNumbers() {
+        const rows = document.querySelectorAll('#quiz-body tr');
+        rows.forEach((row, index) => {
+            const numSpan = row.querySelector('.q-num');
+            if (numSpan) {
+                numSpan.textContent = index + 1;
+            }
+        });
+    }
+
+    function checkAnswer(element, choice) {
+        const row = element.closest('tr');
+        const correctAnswer = row.getAttribute('data-answer');
+        const options = row.querySelectorAll('.option');
+        
+        options.forEach(opt => {
+            opt.classList.remove('revealed');
+            opt.style.backgroundColor = '';
+            opt.style.color = '';
+            opt.style.border = '';
+            opt.querySelector('input').checked = false;
+        });
+
+        element.querySelector('input').checked = true;
+        if (choice === correctAnswer) {
+            element.classList.add('revealed');
+        } else {
+            element.style.backgroundColor = '#f8d7da';
+            element.style.color = '#721c24';
+            element.style.border = '1px solid #f5c6cb';
+        }
+    }
+
+    function revealAll() {
+        const rows = document.querySelectorAll('tr[data-answer]');
+        rows.forEach(row => {
+            const options = row.querySelectorAll('.option');
+            options.forEach(opt => {
+                if (opt.classList.contains('correct-choice')) {
+                    opt.classList.add('revealed');
+                    opt.querySelector('input').checked = true;
+                } else {
+                    opt.style.backgroundColor = '';
+                    opt.style.color = '';
+                    opt.style.border = '';
+                }
+            });
+        });
+    }
+
+    function resetAll() {
+        const options = document.querySelectorAll('.option');
+        options.forEach(opt => {
+            opt.classList.remove('revealed');
+            opt.style.backgroundColor = '';
+            opt.style.color = '';
+            opt.style.border = '';
+            opt.querySelector('input').checked = false;
+        });
+    }
+</script>
+
+
+</body></html>
